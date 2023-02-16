@@ -5,74 +5,79 @@ const getArray = (command, array) => {
         newArr[x1][y1] = get4or2();
         const [x2, y2] = getRandomIndexOfArray(newArr);
         newArr[x2][y2] = get4or2();
-        // console.log(x1, y1, x2, y2);
-        // console.log(x1 === x2 && y1 === y2);
         return { array: newArr, status: true };
     }
-    const workArray =
-        command === "up" || command === "down" ? rotateArray(array) : array;
-    // if (command === "up" || command === "down") array = rotateArray(array);
-    const newArr = workArray.map((row) => {
+    const workArray = ["ArrowUp", "ArrowDown", "KeyW", "KeyS"].includes(command)
+        ? rotateArray(array)
+        : array;
+    const resArr = workArray.map((row) => {
         if (
             row.every((elem) => elem === 0) ||
             (row.every((elem) => elem > 0) && new Set(row).size === 4)
         )
             return row;
         else {
+            const leftOrDown = [
+                "ArrowLeft",
+                "ArrowDown",
+                "KeyA",
+                "KeyS",
+            ].includes(command);
             const filteredRow = row.filter((el) => el > 0);
-            // console.log("+", filteredRow);
-            if (filteredRow.length === 1) return filteredRow;
-            if (command === "left" || command === "down") {
-                const pushedRow = [];
+            const resRow = [];
+            if (filteredRow.length === 1) resRow.push(filteredRow[0]);
+            else if (leftOrDown) {
                 for (let i = 0; i < filteredRow.length; i++) {
                     if (filteredRow[i] === filteredRow[i + 1]) {
-                        pushedRow.push(filteredRow[i] * 2);
+                        resRow.push(filteredRow[i] * 2);
                         i++;
                     } else {
-                        pushedRow.push(filteredRow[i]);
+                        resRow.push(filteredRow[i]);
                     }
                 }
-                return pushedRow;
             } else {
-                const unshiftedRow = [];
                 for (let i = filteredRow.length - 1; i >= 0; i--) {
                     if (filteredRow[i] === filteredRow[i - 1]) {
-                        unshiftedRow.unshift(filteredRow[i] * 2);
+                        resRow.unshift(filteredRow[i] * 2);
                         i--;
                     } else {
-                        unshiftedRow.unshift(filteredRow[i]);
+                        resRow.unshift(filteredRow[i]);
                     }
                 }
-                return unshiftedRow;
             }
+            return leftOrDown
+                ? resRow.concat(0, 0, 0).slice(0, 4)
+                : [0, 0, 0].concat(resRow).slice(-4);
         }
     });
     // console.log("newArr", newArr);
 
-    const resArr = newArr.map((row) => {
-        if (command === "left" || command === "down")
-            return row.concat(0, 0, 0).slice(0, 4);
-        else return [0, 0, 0].concat(row).slice(-4);
-    });
-    // console.log("resArr", resArr);
-
-    if (compareArrays(array, getResArrayFromCommand(resArr, command)))
+    const args = getFreeSpasesFromArray(resArr);
+    // console.log("args", args);
+    if (args.length === 0) {
         return {
             array: array,
             status: true,
         };
-    const args = getFreeSpasesFromArray(resArr);
-    // console.log("args", args);
-    if (args.length === 0)
+    }
+    if (compareArrays(array, getResArrayFromCommand(resArr, command)))
         return {
-            array: getResArrayFromCommand(resArr, command),
-            status: false,
+            array: array,
+            status: true,
         };
     const [x, y] = args[Math.round(Math.random() * (args.length - 1))]
         .slice(-2)
         .split("");
     resArr[+x][+y] = get4or2();
     // console.log("fin", resArr);
+    if (args.length === 1)
+        if (verifyArray(resArr)) {
+            // console.log("game over");
+            return {
+                array: getResArrayFromCommand(resArr, command),
+                status: false,
+            };
+        }
     return {
         array: getResArrayFromCommand(resArr, command),
         status: true,
@@ -123,11 +128,32 @@ function rotateArrayBack(arr) {
     return res;
 }
 function getResArrayFromCommand(arr, command) {
-    return command === "up" || command === "down" ? rotateArrayBack(arr) : arr;
+    return ["ArrowUp", "ArrowDown", "KeyW", "KeyS"].includes(command)
+        ? rotateArrayBack(arr)
+        : arr;
 }
 function getFreeSpasesFromArray(arr) {
     return arr
-        .map((row, i) => row.map((item, j) => `${item}${i}${j}`))
-        .map((row) => row.filter((el) => +el.slice(0, -2) === 0))
+        .map((row, i) =>
+            row
+                .map((item, j) => `${item}${i}${j}`)
+                .filter((el) => +el.slice(0, -2) === 0)
+        )
         .flat();
+}
+function verifyArray(arr) {
+    const verify = [];
+    verifyLoop(arr);
+    verifyLoop(rotateArray(arr));
+    function verifyLoop(A) {
+        A.forEach((row) => {
+            for (let i = 0; i < 4; i++) {
+                if (row[i] === row[i + 1]) {
+                    verify.push("=");
+                    i++;
+                }
+            }
+        });
+    }
+    return verify.length === 0;
 }
