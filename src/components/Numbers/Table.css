@@ -26,8 +26,8 @@
     position: absolute;
     z-index: 2;
     display: flex;
-    justify-content: center; /*Центрирование по горизонтали*/
-    align-items: center; /*Центрирование по вертикали */
+    justify-content: center;
+    align-items: center;
     animation: fadeIn09 2.5s;
 }
 @keyframes fadeIn09 {
@@ -61,8 +61,8 @@
     z-index: 2;
     animation: fadeIn08 2.5s;
     display: flex;
-    justify-content: center; /*Центрирование по горизонтали*/
-    align-items: center; /*Центрирование по вертикали */
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 }
 .Square {
@@ -83,7 +83,7 @@
     font-weight: 600;
     border-radius: 6px;
 }
-.coin2 {
+/* .coin2 {
     background-color: rgb(180, 180, 190);
     color: rgb(60, 60, 60);
 }
@@ -137,7 +137,7 @@
     background-color: rgb(0, 0, 0, 0.6);
     color: rgb(206, 112, 68);
     font-size: 8vh;
-}
+} */
 
 .coin2 {
     background-color: rgb(255, 255, 0, 0.4);
@@ -186,12 +186,10 @@
 .coin2048 {
     background-color: rgb(255, 35, 40, 0.4);
     color: rgb(34, 67, 51);
-    box-shadow: 2px 2px 2px orange;
     font-size: 8vh;
 }
-.coin4096 {
+.coinmax {
     background-color: rgb(255, 0, 20, 0.4);
-    color: rgb(206, 112, 68);
     font-size: 8vh;
     color: yellow;
 }

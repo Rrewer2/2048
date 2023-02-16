@@ -39,18 +39,14 @@ const Table = () => {
         setArray(obj.array);
         setStatus(obj.status);
     };
-    const plates = array.flat().map((el, i) => (
-        <div
-            className="Square"
-            style={el === 0 ? { color: "#8b8b8b" } : null}
-            key={`plates#${i}`}
-        >
-            <div className={`Tile coin${el}`}>{el === 0 ? "" : el}</div>
+    const squares = array.flat().map((el, i) => (
+        <div className="Square" key={`squares#${i}`}>
+            <div className={el > 2048 ? `Tile coinmax` : `Tile coin${el}`}>
+                {el === 0 ? "" : el}
+            </div>
         </div>
     ));
 
-    // for (let line of array) console.log(line);
-    // console.log("render");
     const cn =
         status === "new"
             ? "Game Start-visible"
@@ -77,7 +73,7 @@ const Table = () => {
                 tabIndex={0}
                 onKeyDown={handleKeyDown}
             >
-                {plates}
+                {squares}
             </div>
         </>
     );
