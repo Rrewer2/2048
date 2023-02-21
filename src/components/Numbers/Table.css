@@ -1,0 +1,151 @@
+.btn-start {
+    border: 0.2vmin solid #334633;
+    border-radius: 2vmin;
+    background-color: #698973;
+    font-size: 6vmin;
+    transition-duration: 0.4s;
+}
+.btn-start:hover {
+    background-color: #128a38;
+    box-shadow: 0 3vmin 8vmin 0 rgba(0, 0, 0, 0.24),
+        0 7vmin 10vmin 0 rgba(0, 0, 0, 0.19);
+}
+.Game {
+    background-color: grey;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 2vmin;
+    border-radius: 3vmin;
+    width: 80vmin;
+    height: 80vmin;
+    padding-top: 2vh;
+    border-radius: 1vh;
+}
+.Start-visible {
+    opacity: 0.9;
+    position: absolute;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn09 2.5s;
+}
+@keyframes fadeIn09 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.9;
+    }
+}
+@keyframes fadeIn08 {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0.8;
+    }
+}
+.hidden {
+    display: none;
+}
+.Table-visible {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    animation: fadeIn09 2.5s;
+}
+.again {
+    opacity: 0.8;
+    position: absolute;
+    z-index: 2;
+    animation: fadeIn08 2.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.Square {
+    /* line-height: 5vh; */
+    position: relative;
+    background: rgb(140, 140, 140);
+    width: 18vmin;
+    height: 18vmin;
+    border-radius: 1vmin;
+}
+.Tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    font-weight: 600;
+    border-radius: 1vmin;
+    font-size: 13vmin;
+}
+h1 {
+    font-size: 6vmin;
+}
+.third {
+    font-size: 10vmin;
+}
+.fourth {
+    font-size: 7.5vmin;
+}
+.coin2 {
+    background-color: rgb(255, 255, 0, 0.4);
+    color: rgb(60, 60, 60);
+}
+.coin4 {
+    background-color: rgb(255, 235, 20, 0.4);
+    color: rgb(80, 80, 80);
+}
+.coin8 {
+    background-color: rgb(255, 215, 40, 0.4);
+    color: rgb(200, 200, 200);
+}
+.coin16 {
+    background-color: rgb(255, 185, 60, 0.4);
+    color: rgb(180, 220, 200);
+}
+.coin32 {
+    background-color: rgb(255, 165, 80, 0.4);
+    color: rgb(180, 220, 200);
+}
+.coin64 {
+    background-color: rgb(255, 145, 100, 0.4);
+    color: rgb(180, 220, 200);
+}
+.coin128 {
+    background-color: rgb(255, 125, 120, 0.4);
+    color: rgb(180, 220, 200);
+}
+.coin256 {
+    background-color: rgb(255, 105, 100, 0.4);
+    color: rgb(180, 220, 200);
+}
+.coin512 {
+    background-color: rgb(255, 85, 80, 0.4);
+    color: rgb(180, 220, 200);
+}
+.coin1024 {
+    background-color: rgb(255, 65, 60, 0.4);
+    font-size: 2rem;
+}
+.coin2048 {
+    background-color: rgb(255, 35, 40, 0.4);
+    font-size: 2rem;
+}
+.coinmax {
+    background-color: rgb(255, 0, 20, 0.4);
+    color: yellow;
+}
+
+@media screen and (min-width: 00px) {
+}
+.overlay {
+    height: 90%;
+    z-index: 5;
+    width: 100%;
+    position: absolute;
+}

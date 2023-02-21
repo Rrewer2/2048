@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: clear sans, helvetica neue, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: clear sans, helvetica neue, Arial, sans-serif;
+}
