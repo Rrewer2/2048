@@ -24,7 +24,7 @@
 .Start-visible {
     opacity: 0.9;
     position: absolute;
-    z-index: 2;
+    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,4 +148,5 @@ h1 {
     z-index: 5;
     width: 100%;
     position: absolute;
+    outline: none;
 }

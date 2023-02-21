@@ -16,6 +16,7 @@ const Table = () => {
 
     function handleTouchStart(event) {
         setTouchStart([event.touches[0].clientX, event.touches[0].clientY]);
+        setTouchEnd([event.touches[0].clientX, event.touches[0].clientY]);
     }
 
     function handleTouchMove(event) {
@@ -95,16 +96,12 @@ const Table = () => {
                     Start Game
                 </button>
             </div>
+            <div className="Game Table-visible">{squares}</div>
             <div
-                className="Game Table-visible"
+                className="overlay"
                 ref={ref}
                 tabIndex={0}
                 onKeyDown={handleKeyDown}
-            >
-                {squares}
-            </div>
-            <div
-                className="overlay"
                 onTouchStart={handleTouchStart}
                 onTouchMove={handleTouchMove}
                 onTouchEnd={handleTouchEnd}
