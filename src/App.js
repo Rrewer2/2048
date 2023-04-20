@@ -1,14 +1,14 @@
-import Table from "./components/Numbers/Table";
+import Table from "./components/table/Table";
 import "./App.css";
 
 function App() {
     return (
-        <div className="App">
-            <header className="App- header">2048</header>
-            <div className="App- main">
+        <div className="app">
+            <header className="flex-center header">2048</header>
+            <main className="flex-center main">
                 <Table />
-            </div>
-            <footer className="App- footer"></footer>
+            </main>
+            <footer className="flex-center footer"></footer>
         </div>
     );
 }
