@@ -1,0 +1,36 @@
+.start {
+    background-color: rgba(128, 128, 128, 0.7);
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 3%;
+    z-index: 10;
+    position: absolute;
+    animation: fadeIn07 3s;
+}
+.hidden {
+    display: none;
+}
+.start-title {
+    animation: fadeIn07 5s;
+    font-weight: normal;
+    font-size: 6vmin;
+    margin-bottom: 30vmin;
+}
+.start-btn {
+    animation: fadeIn07 5s;
+    padding: 1vmin 5vmin;
+    border-radius: 1.5vmin;
+    background-color: #fff;
+    font-size: 6vmin;
+    text-transform: uppercase;
+}
+.start-btn:hover {
+    background-color: #000000;
+    color: aliceblue;
+    transition: all 0.5s;
+}
+@keyframes fadeIn07 {
+    0% {
+        opacity: 0;
+    }
+}

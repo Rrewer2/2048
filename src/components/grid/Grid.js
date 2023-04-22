@@ -1,4 +1,4 @@
-import Square from "../Square/Square";
+import Square from "../square/Square";
 
 const Grid = ({ array }) =>
     array.map((item) => (!item?.value ? null : Square(item)));

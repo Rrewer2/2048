@@ -1,5 +1,5 @@
 .square {
-    --time: 150ms;
+    --time: 80ms;
     position: absolute;
     width: 22%;
     height: 22%;
@@ -10,11 +10,9 @@
     font-weight: 600;
     border-radius: 10%;
     font-size: 5vmin;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .showed {
+    opacity: 0;
     animation: show var(--time) forwards;
     transition: none;
 }
@@ -23,14 +21,16 @@
         opacity: 0.5;
         transform: scale(0.5);
     }
+    100% {
+        opacity: 1;
+    }
 }
 .merged {
     animation: merge var(--time);
 }
 @keyframes merge {
-    50% {
+    90% {
         transform: scale(1.2);
-        /* background-color: rgba(193, 103, 2); */
     }
 }
 .coin2,
@@ -82,4 +82,10 @@
 }
 .coin4096 {
     background-color: rgba(55, 0, 50, 0.4);
+}
+.coin1 {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.coin1 p:first-child {
+    display: none;
 }

@@ -20,9 +20,28 @@
     color: white;
 }
 .main {
+    position: relative;
     color: rgb(0, 0, 0);
     height: 86vh;
     background: #505868;
+}
+.grid {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    text-align: center;
+    width: 80vmin;
+    height: 80vmin;
+    border-radius: 3%;
+    outline: none;
+}
+.overlay {
+    background-color: rgba(0, 0, 0, 0.1);
+    height: 100%;
+    z-index: 5;
+    width: 100%;
+    position: absolute;
+    outline: none;
 }
 .footer {
     background-color: #404144;

@@ -3,7 +3,7 @@ const indent = 25;
 const Square = ({ id, x, y, value, merged, showed }) => (
     <div
         key={id}
-        className={`square ${merged ? "merged" : ""} ${
+        className={`square flex-center ${merged ? "merged" : ""} ${
             showed ? "showed" : ""
         } coin${value}`}
         style={{
