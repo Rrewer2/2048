@@ -13,12 +13,6 @@
     align-items: center;
     justify-content: center;
 }
-.header {
-    background-color: #282c34;
-    height: 8vh;
-    font-size: 6vh;
-    color: white;
-}
 .main {
     position: relative;
     color: rgb(0, 0, 0);
@@ -33,14 +27,6 @@
     width: 80vmin;
     height: 80vmin;
     border-radius: 3%;
-    outline: none;
-}
-.overlay {
-    background-color: rgba(0, 0, 0, 0.1);
-    height: 100%;
-    z-index: 5;
-    width: 100%;
-    position: absolute;
     outline: none;
 }
 .footer {

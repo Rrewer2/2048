@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Grid from "./components/grid/Grid";
-import List from "./components/list/List.";
-import Overlay from "./components/overlay/Overlay";
+import List from "./components/list/List";
+import Cover from "./components/cover/Cover";
 import Start from "./components/start/Start";
 import { keyIncludes, fillField, xyFromTouches } from "./services/functions";
 import { firstInit, compareArrays, normalize } from "./services/functions";
@@ -61,6 +61,7 @@ const App = () => {
             const emptiesLength = arrayEmpties(normed).length;
             if (emptiesLength === 1 && verifyArray(replacedArr)) setStatus(0);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [transEnded]);
 
     return (
@@ -76,7 +77,7 @@ const App = () => {
                     <List />
                     <Grid array={array} />
                 </div>
-                <Overlay
+                <Cover
                     handleKeyDown={handleKeyDown}
                     status={status}
                     handleTouch={{

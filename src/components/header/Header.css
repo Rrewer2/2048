@@ -1,0 +1,23 @@
+.header {
+    background-color: #282c34;
+    height: 8vh;
+    font-size: 6vh;
+    color: white;
+}
+.congrats {
+    color: red;
+    animation: congrats 5s forwards;
+}
+@keyframes congrats {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.5);
+    }
+    70% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    90% {
+        transform: scale(0.75);
+    }
+}

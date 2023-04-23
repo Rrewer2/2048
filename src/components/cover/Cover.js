@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
+import "./Cover.css";
 
-const Overlay = ({
+const Cover = ({
     handleKeyDown,
     status,
     handleTouch: { handleTouchStart, handleTouchMove, handleTouchEnd },
@@ -9,7 +10,7 @@ const Overlay = ({
     useEffect(() => ref.current?.focus(), [status]);
     return (
         <div
-            className="overlay"
+            className="cover"
             ref={ref}
             tabIndex={0}
             onKeyDown={handleKeyDown}
@@ -20,4 +21,4 @@ const Overlay = ({
     );
 };
 
-export default Overlay;
+export default Cover;
