@@ -1,0 +1,91 @@
+.square {
+    --time: 80ms;
+    position: absolute;
+    width: 22%;
+    height: 22%;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: gold;
+    border-radius: 10%;
+    transition: var(--time);
+    font-weight: 600;
+    border-radius: 10%;
+    font-size: 5vmin;
+}
+.showed {
+    opacity: 0;
+    animation: show var(--time) forwards;
+    transition: none;
+}
+@keyframes show {
+    0% {
+        opacity: 0.5;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.merged {
+    animation: merge var(--time);
+}
+@keyframes merge {
+    90% {
+        transform: scale(1.2);
+    }
+}
+.coin2,
+.coin4,
+.coin8,
+.coin16 {
+    color: rgba(60, 60, 60);
+    font-size: 10vmin;
+}
+.coin32,
+.coin64,
+.coin128,
+.coin256 {
+    color: rgba(180, 220, 200);
+    font-size: 8vmin;
+}
+.coin2 {
+    background-color: rgba(255, 255, 0, 0.4);
+}
+.coin4 {
+    background-color: rgba(255, 235, 20, 0.4);
+}
+.coin8 {
+    background-color: rgba(255, 215, 40, 0.4);
+}
+.coin16 {
+    background-color: rgba(255, 185, 60, 0.4);
+}
+.coin32 {
+    background-color: rgba(255, 165, 80, 0.4);
+}
+.coin64 {
+    background-color: rgba(255, 145, 100, 0.4);
+}
+.coin128 {
+    background-color: rgba(255, 125, 120, 0.4);
+}
+.coin256 {
+    background-color: rgba(255, 105, 100, 0.4);
+}
+.coin512 {
+    background-color: rgba(55, 85, 200, 0.4);
+}
+.coin1024 {
+    background-color: rgba(55, 65, 150, 0.4);
+}
+.coin2048 {
+    background-color: rgba(55, 35, 100, 0.4);
+}
+.coin4096 {
+    background-color: rgba(55, 0, 50, 0.4);
+}
+.coin1 {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+.coin1 p:first-child {
+    display: none;
+}
