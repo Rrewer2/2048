@@ -1,8 +1,8 @@
 .start {
     background-color: rgba(128, 128, 128, 0.7);
-    width: 80vmin;
-    height: 80vmin;
-    border-radius: 3%;
+    width: var(--side);
+    height: var(--side);
+    border-radius: var(--border-radius);
     z-index: 10;
     position: absolute;
     animation: fadeIn07 3s;

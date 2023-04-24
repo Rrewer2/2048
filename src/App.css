@@ -1,4 +1,6 @@
 * {
+    --side: 80vh;
+    --border-radius: 2vh;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -24,9 +26,9 @@
     background-color: rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     text-align: center;
-    width: 80vmin;
-    height: 80vmin;
-    border-radius: 3%;
+    width: var(--side);
+    height: var(--side);
+    border-radius: var(--border-radius);
     outline: none;
 }
 .footer {
